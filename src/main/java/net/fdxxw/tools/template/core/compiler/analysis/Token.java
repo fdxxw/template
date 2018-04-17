@@ -7,7 +7,7 @@ package net.fdxxw.tools.template.core.compiler.analysis;
 public class Token {
 
     public static enum Type{
-        Text, Space, LeftDelimiter, RightDelimiter // 普通文本, 空白字符, 左分界符{, 右分界符}
+        Text, Space, Expression, LeftDelimiter, RightDelimiter // 普通文本, 空白字符, 表达式, 左分界符{, 右分界符}
     }
 
     private Type type;  //类型
@@ -17,6 +17,22 @@ public class Token {
     public Token(Type type, String value) {
         //TODO
         this.type = type;
+        this.value = value;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
         this.value = value;
     }
 }
